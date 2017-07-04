@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 # Copyright (c) 2009 Clóvis Fabrício Costa
 
@@ -168,8 +168,7 @@ class SambaClient(object):
         if p.returncode != 0 and self.runcmd_num_of_attemps:
             if self._runcmd_attemps < self.runcmd_num_of_attemps:
                 self._runcmd_attemps += 1
-                print u"Number of attemps: %s (cmd: %s)" % (
-                    self._runcmd_attemps,cmd)
+                print("Number of attemps: %s (cmd: %s)" % self._runcmd_attemps, cmd))
                 return self._raw_runcmd(command)
             raise SambaClientError("Error on %r: %r" % (' '.join(cmd), result))
         self._runcmd_attemps = 1
